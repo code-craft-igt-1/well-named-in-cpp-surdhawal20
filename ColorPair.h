@@ -20,15 +20,13 @@ namespace TelCoColorCoder {
         MinorColor minorColor;
     };
 
-    class ColorUtils {
+    class ColorOperations{
     public:
-        static ColorPair getColorFromPairNumber(int pairNumber);
-        static int getPairNumberFromColor(MajorColor major, MinorColor minor);
-		static void printColorCoding();
-
-    private:
         static constexpr int numberOfMajorColors = 5;
         static constexpr int numberOfMinorColors = 5;
+
+        static ColorPair getColorFromPairNumber(int pairNumber);
+        static int getPairNumberFromColor(MajorColor major, MinorColor minor);
     };
 }
 

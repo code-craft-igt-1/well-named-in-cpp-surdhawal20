@@ -9,8 +9,7 @@ int main() {
     TestColorCoding::testPairToNumber(MajorColor::BLACK, MinorColor::ORANGE, 12);
     TestColorCoding::testPairToNumber(MajorColor::VIOLET, MinorColor::SLATE, 25);
 
-    std::cout << "Printing all color codes:" << std::endl;
-    ColorUtils::printColorCoding();
+    TestColorCoding::testAllColorNumberPair();
 
     return 0;
 }

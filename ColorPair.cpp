@@ -21,21 +21,15 @@ namespace TelCoColorCoder {
         return std::string(MajorColorNames[static_cast<int>(majorColor)]) + " " + MinorColorNames[static_cast<int>(minorColor)];
     }
 
-    ColorPair ColorUtils::getColorFromPairNumber(int pairNumber) {
+    ColorPair ColorOperations::getColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor = static_cast<MajorColor>(zeroBasedPairNumber / numberOfMinorColors);
         MinorColor minorColor = static_cast<MinorColor>(zeroBasedPairNumber % numberOfMinorColors);
         return ColorPair(majorColor, minorColor);
     }
 
-    int ColorUtils::getPairNumberFromColor(MajorColor major, MinorColor minor) {
+    int ColorOperations::getPairNumberFromColor(MajorColor major, MinorColor minor) {
         return static_cast<int>(major) * numberOfMinorColors + static_cast<int>(minor) + 1;
     }
 
-    void ColorUtils::printColorCoding() {
-        for (int pairNumber = 1; pairNumber <= numberOfMajorColors * numberOfMinorColors; ++pairNumber) {
-            ColorPair colorPair = ColorUtils::getColorFromPairNumber(pairNumber);
-            std::cout << "Pair Number: " << pairNumber << " - " << colorPair.toString() << std::endl;
-        }
-    }
 }
